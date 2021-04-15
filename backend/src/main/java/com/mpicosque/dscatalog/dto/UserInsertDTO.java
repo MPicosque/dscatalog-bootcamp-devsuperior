@@ -2,6 +2,9 @@ package com.mpicosque.dscatalog.dto;
 
 import java.io.Serializable;
 
+import com.mpicosque.dscatalog.services.validation.UserInsertValid;
+
+@UserInsertValid
 public class UserInsertDTO extends UserDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
