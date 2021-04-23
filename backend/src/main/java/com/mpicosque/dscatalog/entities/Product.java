@@ -50,7 +50,10 @@ public class Product implements Serializable {
 		this.imgUrl = imgUrl;
 		this.date = date;
 	}
-
+	
+	/**
+	 * Getters & Setters
+	 */
 	public Long getId() {
 		return id;
 	}

@@ -15,6 +15,8 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
+import com.mpicosque.dscatalog.dto.CategoryDTO;
+
 @Entity
 @Table(name = "tb_category")
 public class Category implements Serializable {
@@ -37,11 +39,19 @@ public class Category implements Serializable {
 	public Category() {
 	}
 
+	public Category(CategoryDTO dto) {
+		
+		this.name = dto.getName();
+	}
+
 	public Category(Long id, String name) {
 		this.id = id;
 		this.name = name;
 	}
-
+	
+	/**
+	 * Getters & Setters
+	 */
 	public Long getId() {
 		return id;
 	}
@@ -66,6 +76,9 @@ public class Category implements Serializable {
 		return updatedAt;
 	}
 	
+	/**
+	 * Auditor of create new category
+	 */
 	@PrePersist
 	public void prePersist() {
 		createdAt = Instant.now();
